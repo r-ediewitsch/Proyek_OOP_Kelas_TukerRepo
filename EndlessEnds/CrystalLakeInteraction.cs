@@ -6,7 +6,6 @@ namespace EndlessEnds
     {
         private Character player;
         private Battle battle;
-        private bool hasMetCompanion = false;
 
         public CrystalLakeInteraction(Character player, Battle battle)
         {
@@ -14,38 +13,39 @@ namespace EndlessEnds
             this.battle = battle;
         }
 
-        public void Handle(string direction, string currentRoom)
+        public void Handle(string direction, string currentRoom, bool hasMetCompanion)
         {
-            if (currentRoom == "Crystal Lake")
+            if (currentRoom == "Near Crystal Lake" && hasMetCompanion)
             {
-                if (!hasMetCompanion)
-                {
-                    CompanionAppears();
-                    hasMetCompanion = true;
-                }
-                else if (currentRoom == "Crystal Lake" && direction == "north")
-                {
-                    StartDragonBattle();
-                }
-                else if (direction == "east")
+                if (direction == "east")
                 {
                     RestAndHeal();
                 }
+                else if (direction == "north")
+                {
+                    Console.WriteLine("You move further towards the end of Crystal Lake.");
+                }
+            }
+            else if (currentRoom == "End of Crystal Lake" && hasMetCompanion)
+            {
+                StartDragonBattle();
             }
         }
 
-        private void CompanionAppears()
+        public bool CompanionAppears()
         {
             Console.WriteLine("\nAs you step closer to the shimmering water of Crystal Lake, you hear a soft rustle.");
-            Console.WriteLine("A figure steps out from behind a crystal formation, revealing herself to be a hooded girl.");
-            Console.WriteLine("\"Greetings, traveler,\" she says with a gentle smile. \"I am Kayo,I happen to be passing by.\"");
-            Console.WriteLine("She looks at you with piercing eyes, \"Hm.. Hm.. I sense a great journey ahead of you. Allow me to accompany you,");
+            Console.WriteLine("A figure steps out from behind a crystal formation, revealing herself to be a fox girl.");
+            Console.WriteLine("\"Greetings, traveler,\" she says with a gentle smile. \"I am Kayo, guardian of this lake.\"");
+            Console.WriteLine("She looks at you with piercing eyes, \"I sense a great journey ahead of you. Allow me to accompany you,");
             Console.WriteLine("for the challenges you face are too great to conquer alone.\"");
             Console.WriteLine("With Kayo by your side, you feel a newfound sense of strength and determination.");
+            return true;
         }
+
         private void StartDragonBattle()
         {
-            Console.WriteLine("You have reached the northern part of Crystal Lake and encountered the Sapphire Dragon!");
+            Console.WriteLine("You have reached the end of Crystal Lake and encountered the Sapphire Dragon!");
             // Start battle with Sapphire Dragon
             Enemy dragon = new Enemy("Sapphire Dragon", 300, 50);
             battle.StartCombat(player, dragon);
@@ -55,6 +55,7 @@ namespace EndlessEnds
         {
             Console.WriteLine("You see a comfortable place to rest. You take a rest and heal for 30% of max health.");
             player.Health += player.Health * 0.3f;
+            player.ResetMagicUses(); // Reset magic uses when resting
             Console.WriteLine($"Your health is now {player.Health}.");
 
             Console.WriteLine("\nKayo: \"Resting here brings back memories...\"");

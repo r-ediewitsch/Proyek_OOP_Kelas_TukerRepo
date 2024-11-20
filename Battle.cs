@@ -1,9 +1,11 @@
-using System.ComponentModel;
+using System;
 
 public class Battle
 {
-    public void StartCombat(Character player, Enemy enemy, Character companion = null)
+    public void StartCombat(Character player, Enemy enemy)
     {
+        player.ResetMagicUses(); // Reset magic uses at the start of each battle
+
         while (enemy.Health > 0 && player.Health > 0)
         {
             Console.WriteLine("\nChoose your action:");
@@ -19,11 +21,22 @@ public class Battle
                     player.Attack(enemy);
                     break;
                 case "2":
-                    Console.WriteLine("Magic functionality here...");
-                    
+                    Console.WriteLine("Choose your magic:");
+                    Console.WriteLine("1. Arcane Blast");
+                    Console.WriteLine("2. Mystic Coating");
+                    Console.WriteLine("3. Rejuvenate");
+
+                    if (int.TryParse(Console.ReadLine(), out int magicChoice))
+                    {
+                        player.UseMagic(magicChoice, enemy);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid magic choice. You wasted a turn.");
+                    }
                     break;
                 case "3":
-                    Console.WriteLine("Defend functionality here...");
+                    player.Defend();
                     break;
                 default:
                     Console.WriteLine("Invalid action.");
@@ -32,15 +45,7 @@ public class Battle
 
             if (enemy.Health > 0)
             {
-                Console.WriteLine($"{enemy.Name} attacks!");
                 enemy.Attack(player);
-            }
-
-            // Companion attack
-            if (companion != null && enemy.Health > 0)
-            {
-                Console.WriteLine($"{companion.CharacterName} attacks!");
-                companion.Attack(enemy);
             }
         }
 

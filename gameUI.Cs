@@ -9,21 +9,22 @@ namespace EndlessEnds
         private List<Item> inventory = new List<Item>();
         private Battle battle;
 
-        private Room mainVillage;
-        private Room ancientForest;
-        private Room crystalLake;
-        private Room elderCavern;
-        private Room dreamWorld;
+        private RoomManager roomManager;
+        private Room currentRoom;
 
         private CrystalLakeInteraction crystalLakeInteraction;
+        private bool hasMetCompanion = false;
 
         public GameUI(Character player)
         {
             this.player = player;
             this.battle = new Battle();
-            InitializeRooms();
+            this.roomManager = new RoomManager();
+            roomManager.InitializeRooms();
 
             crystalLakeInteraction = new CrystalLakeInteraction(player, battle);
+
+            currentRoom = roomManager.MainVillage;
 
             // Adding basic items to inventory
             inventory.Add(new Item("Basic Sword", ItemType.Weapon, 10));
@@ -73,8 +74,6 @@ namespace EndlessEnds
         {
             Console.WriteLine("\nYou venture into the mysterious lands of Endless Ends...");
 
-            Room currentRoom = mainVillage;
-
             while (true)
             {
                 Console.WriteLine($"\nYou are in {currentRoom.Name}.");
@@ -96,8 +95,16 @@ namespace EndlessEnds
                         Room nextRoom = currentRoom.GetExit(direction);
                         if (nextRoom != null)
                         {
+                            if (currentRoom == roomManager.CrystalLakeEntrance && !hasMetCompanion)
+                            {
+                                hasMetCompanion = crystalLakeInteraction.CompanionAppears();
+                            }
+                            else if (currentRoom == roomManager.CrystalLakeNear || currentRoom == roomManager.CrystalLakeEnd || currentRoom == roomManager.CrystalLakeRest)
+                            {
+                                crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
+                            }
+
                             currentRoom = nextRoom;
-                            crystalLakeInteraction.Handle(direction, currentRoom.Name);
                         }
                         else
                         {
@@ -141,23 +148,6 @@ namespace EndlessEnds
                     Console.WriteLine("- " + item);
                 }
             }
-        }
-
-        private void InitializeRooms()
-        {
-            dreamWorld = new Room("Dream World", "world full of clouds, fog as thick as dreams alike.");
-            ancientForest = new Room("Ancient Forest", "A vast forest where the ancient monsters dwell.");
-            mainVillage = new Room("Main Village", "Home village where I live.");
-            elderCavern = new Room("Elder Cavern", "Cavern that eminates darkness around it.");
-            crystalLake = new Room("Crystal Lake", "A lake full of magical crystals.");
-
-            mainVillage.SetExit("north", ancientForest);
-            ancientForest.SetExit("south", mainVillage);
-            ancientForest.SetExit("north", crystalLake);
-            crystalLake.SetExit("south", ancientForest);
-            crystalLake.SetExit("north", elderCavern);
-            elderCavern.SetExit("south", crystalLake);
-            crystalLake.SetExit("east", crystalLake); // To allow resting and dialogue
         }
     }
 }
