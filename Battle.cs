@@ -1,6 +1,6 @@
 public class Battle
 {
-    public void StartCombat(Player player, Enemy enemy)
+    public void StartCombat(Character player, Enemy enemy, Character companion = null)
     {
         while (enemy.Health > 0 && player.Health > 0)
         {
@@ -17,29 +17,10 @@ public class Battle
                     player.Attack(enemy);
                     break;
                 case "2":
-                    if (player.Magic > 0)
-                    {
-                        Console.WriteLine("Choose your magic:");
-                        Console.WriteLine("1. Arcane Blast");
-                        Console.WriteLine("2. Mystic Coating");
-                        Console.WriteLine("3. Rejuvenate");
-
-                        if (int.TryParse(Console.ReadLine(), out int magicChoice))
-                        {
-                            player.UseMagic(magicChoice, enemy);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid magic choice. You wasted a turn.");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("You are out of magic.");
-                    }
+                    Console.WriteLine("Magic functionality here...");
                     break;
                 case "3":
-                    player.Defend();
+                    Console.WriteLine("Defend functionality here...");
                     break;
                 default:
                     Console.WriteLine("Invalid action.");
@@ -48,7 +29,15 @@ public class Battle
 
             if (enemy.Health > 0)
             {
+                Console.WriteLine($"{enemy.Name} attacks!");
                 enemy.Attack(player);
+            }
+
+            // Companion attack
+            if (companion != null && enemy.Health > 0)
+            {
+                Console.WriteLine($"{companion.CharacterName} attacks!");
+                companion.Attack(enemy);
             }
         }
 

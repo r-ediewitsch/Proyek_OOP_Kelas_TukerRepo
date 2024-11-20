@@ -8,14 +8,16 @@ namespace EndlessEnds
         private Character player;
         private List<Item> inventory = new List<Item>();
         private Battle battle;
+        private Character companion; // Companion untuk membantu di battle
 
         public GameUI(Character player)
         {
             this.player = player;
             this.battle = new Battle();
+
             // Menambahkan item dasar ke inventory
-            inventory.Add(new Item("Basic Sword", ItemType.Weapon));
-            inventory.Add(new Item("Health Potion", ItemType.potion));
+            inventory.Add(new Item("Basic Sword", ItemType.Weapon, "Basic attack boost"));
+            inventory.Add(new Item("Health Potion", ItemType.Potion, "Restore 50 HP"));
         }
 
         public void Start()
@@ -64,13 +66,23 @@ namespace EndlessEnds
 
             // Buat instance Enemy untuk bertarung
             Enemy enemy = new Enemy("Goblin", 30, 5);
-            battle.StartCombat(player, enemy);
+
+            // Companion membantu di pertempuran tertentu
+            if (companion != null)
+            {
+                Console.WriteLine($"{companion.CharacterName} joins the battle!");
+                battle.StartCombat(player, enemy, companion);
+            }
+            else
+            {
+                battle.StartCombat(player, enemy);
+            }
 
             // Jika player menang, beri loot
             if (enemy.Health <= 0)
             {
                 Console.WriteLine("You found a loot!");
-                var loot = new Item("Mystic Potion", ItemType.potion);
+                var loot = new Item("Mystic Potion", ItemType.Potion, "Restore 100 HP");
                 inventory.Add(loot);
                 Console.WriteLine($"Added {loot} to inventory.");
             }
@@ -79,10 +91,7 @@ namespace EndlessEnds
         private void DisplayCharacterStats()
         {
             Console.WriteLine("\n--- Character Stats ---");
-            Console.WriteLine($"Name: {player.CharacterName}");
-            Console.WriteLine($"Health: {player.Health}");
-            Console.WriteLine($"Weapon: {player.weapon}");
-            Console.WriteLine($"Potion: {player.potion}");
+            Console.WriteLine(player.ToString());
         }
 
         private void OpenInventory()
