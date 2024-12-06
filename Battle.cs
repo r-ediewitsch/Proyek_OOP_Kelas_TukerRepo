@@ -4,8 +4,6 @@ public class Battle
 {
     public void StartCombat(Character player, Enemy enemy)
     {
-        player.ResetMagicUses(); // Reset magic uses at the start of each battle
-
         while (enemy.Health > 0 && player.Health > 0)
         {
             Console.WriteLine("\nChoose your action:");
@@ -52,6 +50,7 @@ public class Battle
         if (enemy.Health <= 0)
         {
             Console.WriteLine("Enemy Defeated");
+            player.ResetMagicUses();
         }
         else
         {

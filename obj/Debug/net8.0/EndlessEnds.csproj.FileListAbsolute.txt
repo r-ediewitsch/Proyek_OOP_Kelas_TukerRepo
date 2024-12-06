@@ -1,0 +1,57 @@
+C:\Users\Raddief Ezra S. A\EndlessEnds\bin\Debug\net8.0\EndlessEnds.exe
+C:\Users\Raddief Ezra S. A\EndlessEnds\bin\Debug\net8.0\EndlessEnds.deps.json
+C:\Users\Raddief Ezra S. A\EndlessEnds\bin\Debug\net8.0\EndlessEnds.runtimeconfig.json
+C:\Users\Raddief Ezra S. A\EndlessEnds\bin\Debug\net8.0\EndlessEnds.dll
+C:\Users\Raddief Ezra S. A\EndlessEnds\bin\Debug\net8.0\EndlessEnds.pdb
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\EndlessEnds.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\EndlessEnds.AssemblyInfoInputs.cache
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\EndlessEnds.AssemblyInfo.cs
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\EndlessEnds.csproj.CoreCompileInputs.cache
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\EndlessEnds.dll
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\refint\EndlessEnds.dll
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\EndlessEnds.pdb
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\EndlessEnds.genruntimeconfig.cache
+C:\Users\Raddief Ezra S. A\EndlessEnds\obj\Debug\net8.0\ref\EndlessEnds.dll
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\bin\Debug\net8.0\EndlessEnds.exe
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\bin\Debug\net8.0\EndlessEnds.deps.json
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\bin\Debug\net8.0\EndlessEnds.runtimeconfig.json
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\bin\Debug\net8.0\EndlessEnds.dll
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\bin\Debug\net8.0\EndlessEnds.pdb
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\EndlessEnds.GeneratedMSBuildEditorConfig.editorconfig
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\EndlessEnds.AssemblyInfoInputs.cache
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\EndlessEnds.AssemblyInfo.cs
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\EndlessEnds.csproj.CoreCompileInputs.cache
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\EndlessEnds.sourcelink.json
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\EndlessEnds.dll
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\refint\EndlessEnds.dll
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\EndlessEnds.pdb
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\EndlessEnds.genruntimeconfig.cache
+C:\RIyan\Tugas\OOP dan Praktikum\Gim\EndlessEnds\Proyek_OOP_Kelas_TukerRepo\EndlessEnds\obj\Debug\net8.0\ref\EndlessEnds.dll
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\bin\Debug\net8.0\EndlessEnds.exe
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\bin\Debug\net8.0\EndlessEnds.deps.json
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\bin\Debug\net8.0\EndlessEnds.runtimeconfig.json
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\bin\Debug\net8.0\EndlessEnds.dll
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\bin\Debug\net8.0\EndlessEnds.pdb
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\EndlessEnds.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\EndlessEnds.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\EndlessEnds.AssemblyInfo.cs
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\EndlessEnds.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\EndlessEnds.dll
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\refint\EndlessEnds.dll
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\EndlessEnds.pdb
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\EndlessEnds.genruntimeconfig.cache
+C:\Users\ACER\Documents\CSharp\EndlessEnds\EndlessEnds\obj\Debug\net8.0\ref\EndlessEnds.dll
+C:\Users\ACER\Documents\CSharp\EndlessEnds\bin\Debug\net8.0\EndlessEnds.exe
+C:\Users\ACER\Documents\CSharp\EndlessEnds\bin\Debug\net8.0\EndlessEnds.deps.json
+C:\Users\ACER\Documents\CSharp\EndlessEnds\bin\Debug\net8.0\EndlessEnds.runtimeconfig.json
+C:\Users\ACER\Documents\CSharp\EndlessEnds\bin\Debug\net8.0\EndlessEnds.dll
+C:\Users\ACER\Documents\CSharp\EndlessEnds\bin\Debug\net8.0\EndlessEnds.pdb
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\EndlessEnds.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\EndlessEnds.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\EndlessEnds.AssemblyInfo.cs
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\EndlessEnds.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\EndlessEnds.dll
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\refint\EndlessEnds.dll
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\EndlessEnds.pdb
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\EndlessEnds.genruntimeconfig.cache
+C:\Users\ACER\Documents\CSharp\EndlessEnds\obj\Debug\net8.0\ref\EndlessEnds.dll

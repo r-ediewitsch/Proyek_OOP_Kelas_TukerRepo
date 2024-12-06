@@ -106,4 +106,9 @@ public class Character
     {
         magicUses = 4; // Reset the magic uses count
     }
+
+    public void UseMagic()
+    {
+        magicUses--;
+    }
 }

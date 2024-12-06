@@ -13,6 +13,7 @@ namespace EndlessEnds
         private Room currentRoom;
 
         private CrystalLakeInteraction crystalLakeInteraction;
+        private HealingFountain healingFountain;
         private bool hasMetCompanion = false;
 
         public GameUI(Character player)
@@ -33,6 +34,7 @@ namespace EndlessEnds
 
         public void Start()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to Endless Ends!");
             DisplayMainMenu();
         }
@@ -84,6 +86,7 @@ namespace EndlessEnds
                 Console.WriteLine("1. Move");
                 Console.WriteLine("2. Look around");
                 Console.WriteLine("3. Quit exploring");
+                Console.Write("Choose an option (1-3): ");
 
                 string action = Console.ReadLine();
 
@@ -113,7 +116,12 @@ namespace EndlessEnds
                         break;
                     case "2":
                         Console.WriteLine("You look around the room. It's calm and peaceful.");
-                        // You can add more interactions here
+
+                        if(currentRoom.Name == "Ancient Forest" || currentRoom.Name == "End of Crystal Lake")
+                        {
+                            healingFountain = new HealingFountain(player);
+                            healingFountain.Encounter();
+                        }
                         break;
                     case "3":
                         Console.WriteLine("You stop exploring and return to the main menu.");
