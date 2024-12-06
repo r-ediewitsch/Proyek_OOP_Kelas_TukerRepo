@@ -13,6 +13,7 @@ namespace EndlessEnds
         private Room currentRoom;
 
         private CrystalLakeInteraction crystalLakeInteraction;
+        private HealingFountain healingFountain;
         private bool hasMetCompanion = false;
 
         public GameUI(Character player)
@@ -116,7 +117,12 @@ namespace EndlessEnds
                         break;
                     case "2":
                         Console.WriteLine("You look around the room. It's calm and peaceful.");
-                        // You can add more interactions here
+
+                        if(currentRoom.Name == "Ancient Forest" || currentRoom.Name == "End of Crystal Lake")
+                        {
+                            healingFountain = new HealingFountain(player);
+                            healingFountain.Encounter();
+                        }
                         break;
                     case "3":
                         Console.WriteLine("You stop exploring and return to the main menu.");

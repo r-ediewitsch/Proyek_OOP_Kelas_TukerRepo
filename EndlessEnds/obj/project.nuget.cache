@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Q9+Cj8hNQMc=",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Documents\\VSCode\\C#\\Proyek_OOP_Kelas_TukerRepo\\EndlessEnds\\EndlessEnds.csproj",
+=======
+  "dgSpecHash": "TcRQsuAHlHI=",
+  "success": true,
+  "projectFilePath": "C:\\RIyan\\Tugas\\OOP dan Praktikum\\Gim\\EndlessEnds\\Proyek_OOP_Kelas_TukerRepo\\EndlessEnds\\EndlessEnds.csproj",
+>>>>>>> 015bf72c32be2d55d03ae6c04f2a099d391972d3
   "expectedPackageFiles": [],
   "logs": []
 }
