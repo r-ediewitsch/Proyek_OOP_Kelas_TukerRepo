@@ -34,6 +34,7 @@ namespace EndlessEnds
 
         public void Start()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to Endless Ends!");
             DisplayMainMenu();
         }
@@ -85,6 +86,7 @@ namespace EndlessEnds
                 Console.WriteLine("1. Move");
                 Console.WriteLine("2. Look around");
                 Console.WriteLine("3. Quit exploring");
+                Console.Write("Choose an option (1-3): ");
 
                 string action = Console.ReadLine();
 
