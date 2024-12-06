@@ -17,6 +17,10 @@ public class Enemy
     {
         Console.WriteLine($"{Name} attacks {player.CharacterName} for {Damage} damage.");
         player.Health -= Damage;
+        if (player.Health <= 0)
+        {
+            player.Health = 0;
+        }
         Console.WriteLine($"{player.CharacterName} has {player.Health} health left.");
     }
 }

@@ -10,6 +10,7 @@ public class RoomManager
     public Room CrystalLakeRest { get; private set; } 
     public Room BanditHideout1 { get; private set; }
     public Room BanditHideout2 { get; private set; }
+    public Room SecretHideout { get; private set; }
 
 
     public void InitializeRooms()
@@ -24,6 +25,7 @@ public class RoomManager
         CrystalLakeRest = new Room("Crystal Lake Rest Area", "A tranquil spot to rest and rejuvenate.");
         BanditHideout1 = new Room("Bandit Hideout", "A dark and damp hideout filled with bandits.");
         BanditHideout2 = new Room("Bandit Lair", "Another hideout where bandits lurk.");
+        SecretHideout = new Room("Secret Hideout", "A hidden room behind a locked door.");
 
         MainVillage.SetExit("north", AncientForest);
         AncientForest.SetExit("south", MainVillage);
@@ -36,6 +38,7 @@ public class RoomManager
         CrystalLakeRest.SetExit("west", CrystalLakeNear); 
         CrystalLakeEnd.SetExit("south", CrystalLakeNear);
         CrystalLakeEnd.SetExit("north", ElderCavern);
+        CrystalLakeEnd.SetExit("west", SecretHideout);
         ElderCavern.SetExit("south", CrystalLakeEnd);
         MainVillage.SetExit("east", BanditHideout1);
         BanditHideout1.SetExit("west", MainVillage);

@@ -20,5 +20,7 @@ public class Item
 public enum ItemType
 {
     Weapon,
-    Potion
+    Potion,
+    Key,
+    Scroll
 }

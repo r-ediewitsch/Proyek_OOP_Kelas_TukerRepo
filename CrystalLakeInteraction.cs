@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace EndlessEnds
 {
@@ -6,20 +7,22 @@ namespace EndlessEnds
     {
         private Character player;
         private Battle battle;
+        public List<Item> inventory;
 
-        public CrystalLakeInteraction(Character player, Battle battle)
+        public CrystalLakeInteraction(Character player, Battle battle, List<Item> inventory)
         {
             this.player = player;
             this.battle = battle;
+            this.inventory = inventory;
         }
 
         public void Handle(string direction, string currentRoom, bool hasMetCompanion)
-        {
-            Console.WriteLine("currentRoom: " + currentRoom);
+        {            
             if (currentRoom == "Near Crystal Lake" && hasMetCompanion)
             {
                 if (direction == "east")
                 {
+                    getRandomItem();
                     RestAndHeal();
                 }
                 else if (direction == "north")
@@ -29,7 +32,14 @@ namespace EndlessEnds
             }
             else if (currentRoom == "End of Crystal Lake" && hasMetCompanion)
             {
-                StartDragonBattle();
+                if (direction == "north")
+                {
+                    StartDragonBattle();
+                }
+                else if (direction == "west")
+                {
+                    StartSecretNinjaBattle();
+                }
             }
             else if (hasMetCompanion && (currentRoom == "Bandit Hideout" || currentRoom == "Bandit Lair"))
             {
@@ -64,6 +74,14 @@ namespace EndlessEnds
             battle.StartCombat(player, bandit);
         }
 
+        private void StartSecretNinjaBattle()
+        {
+            Console.WriteLine("A crazy ninja who has been hiding in the shadows jumps out and attacks you! He wants to take your soul!");
+            // Start battle with Secret Ninja
+            Enemy secretNinja = new Enemy("Secret Ninja", 1000, 500);
+            battle.StartCombat(player, secretNinja);
+        }
+
         private void RestAndHeal()
         {
             Console.WriteLine("You see a comfortable place to rest. You take a rest and heal for 30% of max health.");
@@ -74,6 +92,30 @@ namespace EndlessEnds
             Console.WriteLine("\nKayo: \"Resting here brings back memories...\"");
             Console.WriteLine("Kayo: \"I've protected this lake for many years, and it has a calming effect on me.\"");
             Console.WriteLine("Kayo: \"Let's take this moment to gather our strength for the battles ahead.\"");
+        }
+
+        private void getRandomItem()
+        {
+            Random random = new Random();
+            int itemIndex = random.Next(0, 3);
+            Item? item = null;
+            switch (itemIndex)
+            {
+                case 0:
+                    item = new Item("Defense Potion", ItemType.Potion, 0);
+                    break;
+                case 1:
+                    item = new Item("Old Scroll", ItemType.Scroll, 0);
+                    break;
+                case 2:
+                    item = new Item("White Key", ItemType.Key, 0);
+                    break;
+            }
+            if (item != null)
+            {
+                inventory.Add(item);
+            }
+            Console.WriteLine($"\nYou found a {item?.Name}!\n");
         }
     }
 }

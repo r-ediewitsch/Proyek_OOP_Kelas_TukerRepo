@@ -6,7 +6,7 @@ namespace EndlessEnds
     public class GameUI
     {
         private Character player;
-        private List<Item> inventory = new List<Item>();
+        public List<Item> inventory = new List<Item>();
         private Battle battle;
 
         private RoomManager roomManager;
@@ -23,7 +23,7 @@ namespace EndlessEnds
             this.roomManager = new RoomManager();
             roomManager.InitializeRooms();
 
-            crystalLakeInteraction = new CrystalLakeInteraction(player, battle);
+            crystalLakeInteraction = new CrystalLakeInteraction(player, battle, inventory);
 
             currentRoom = roomManager.MainVillage;
 
@@ -102,13 +102,31 @@ namespace EndlessEnds
                             {
                                 hasMetCompanion = crystalLakeInteraction.CompanionAppears();
                             }
-                            else if (currentRoom == roomManager.CrystalLakeNear || currentRoom == roomManager.CrystalLakeEnd || currentRoom == roomManager.CrystalLakeRest)
+                            else if (currentRoom == roomManager.CrystalLakeNear ||
+                                     currentRoom == roomManager.CrystalLakeRest ||
+                                     currentRoom == roomManager.BanditHideout1 ||
+                                     currentRoom == roomManager.BanditHideout2)
                             {
                                 crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
                             }
-                            else if (currentRoom == roomManager.BanditHideout1 || currentRoom == roomManager.BanditHideout2)
+                            else if (currentRoom == roomManager.CrystalLakeEnd)
                             {
-                                crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
+                                if (direction == "west")
+                                {
+                                    if (inventory.Exists(item => item.Name == "White Key"))
+                                    {
+                                        crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("The door is locked. You need a key to open it.");
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
+                                }
                             }
                             currentRoom = nextRoom;
                         }
@@ -120,7 +138,7 @@ namespace EndlessEnds
                     case "2":
                         Console.WriteLine("You look around the room. It's calm and peaceful.");
 
-                        if(currentRoom.Name == "Ancient Forest" || currentRoom.Name == "End of Crystal Lake")
+                        if (currentRoom.Name == "Ancient Forest" || currentRoom.Name == "End of Crystal Lake")
                         {
                             healingFountain = new HealingFountain(player);
                             healingFountain.Encounter();

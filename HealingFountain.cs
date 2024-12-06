@@ -35,6 +35,6 @@ public class HealingFountain
         Console.WriteLine("You casted magic to the water and drink the water.");
         Player.Health += 100;
         Player.UseMagic();
-        Console.WriteLine("You’re feeling rejuvenated (+100 HP)");
+        Console.WriteLine("You're feeling rejuvenated (+100 HP)");
     }
 }

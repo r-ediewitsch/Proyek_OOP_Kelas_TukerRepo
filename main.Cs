@@ -7,7 +7,7 @@ namespace EndlessEnds
         public static void Main(string[] args)
         {
             // Create a character
-            Character player = new Character("thug hunter", 100, new Item("Basic Sword", ItemType.Weapon, 10), new Item("Health Potion", ItemType.Potion, 0));
+            Character player = new Character("Warrior A", 100, new Item("Basic Sword", ItemType.Weapon, 10), new Item("Health Potion", ItemType.Potion, 0));
 
             // Initialize the game UI with the player character
             GameUI game = new GameUI(player);
