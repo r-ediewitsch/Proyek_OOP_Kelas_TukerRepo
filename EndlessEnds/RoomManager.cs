@@ -31,5 +31,6 @@ public class RoomManager
         CrystalLakeEnd.SetExit("south", CrystalLakeNear);
         CrystalLakeEnd.SetExit("north", ElderCavern);
         ElderCavern.SetExit("south", CrystalLakeEnd);
+        CrystalLakeRest.SetExit("west", CrystalLakeNear);
     }
 }

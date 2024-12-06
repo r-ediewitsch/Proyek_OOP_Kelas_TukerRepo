@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Raddief Ezra S. A\\.nuget\\packages\\": {}
+    "C:\\Users\\mriya\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Raddief Ezra S. A\\EndlessEnds\\EndlessEnds.csproj",
+      "projectUniqueName": "C:\\RIyan\\Tugas\\OOP dan Praktikum\\Gim\\EndlessEnds\\Proyek_OOP_Kelas_TukerRepo\\EndlessEnds\\EndlessEnds.csproj",
       "projectName": "EndlessEnds",
-      "projectPath": "C:\\Users\\Raddief Ezra S. A\\EndlessEnds\\EndlessEnds.csproj",
-      "packagesPath": "C:\\Users\\Raddief Ezra S. A\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Raddief Ezra S. A\\EndlessEnds\\obj\\",
+      "projectPath": "C:\\RIyan\\Tugas\\OOP dan Praktikum\\Gim\\EndlessEnds\\Proyek_OOP_Kelas_TukerRepo\\EndlessEnds\\EndlessEnds.csproj",
+      "packagesPath": "C:\\Users\\mriya\\.nuget\\packages\\",
+      "outputPath": "C:\\RIyan\\Tugas\\OOP dan Praktikum\\Gim\\EndlessEnds\\Proyek_OOP_Kelas_TukerRepo\\EndlessEnds\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Raddief Ezra S. A\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\mriya\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
