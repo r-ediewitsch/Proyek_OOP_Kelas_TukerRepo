@@ -15,6 +15,7 @@ namespace EndlessEnds
 
         public void Handle(string direction, string currentRoom, bool hasMetCompanion)
         {
+            Console.WriteLine("currentRoom: " + currentRoom);
             if (currentRoom == "Near Crystal Lake" && hasMetCompanion)
             {
                 if (direction == "east")
@@ -29,6 +30,10 @@ namespace EndlessEnds
             else if (currentRoom == "End of Crystal Lake" && hasMetCompanion)
             {
                 StartDragonBattle();
+            }
+            else if (hasMetCompanion && (currentRoom == "Bandit Hideout" || currentRoom == "Bandit Lair"))
+            {
+                StartBanditBattle();
             }
         }
 
@@ -49,6 +54,14 @@ namespace EndlessEnds
             // Start battle with Sapphire Dragon
             Enemy dragon = new Enemy("Sapphire Dragon", 300, 50);
             battle.StartCombat(player, dragon);
+        }
+
+        private void StartBanditBattle()
+        {
+            Console.WriteLine("A bandit attempts to rob you!");
+            // Start battle with Bandits
+            Enemy bandit = new Enemy("Bandit 1", 50, 10);
+            battle.StartCombat(player, bandit);
         }
 
         private void RestAndHeal()

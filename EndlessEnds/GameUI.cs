@@ -103,7 +103,10 @@ namespace EndlessEnds
                             {
                                 crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
                             }
-
+                            else if (currentRoom == roomManager.BanditHideout1 || currentRoom == roomManager.BanditHideout2)
+                            {
+                                crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
+                            }
                             currentRoom = nextRoom;
                         }
                         else

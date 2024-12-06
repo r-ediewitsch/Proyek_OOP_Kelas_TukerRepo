@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Raddief Ezra S. A\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Raddief Ezra S. A\\EndlessEnds\\EndlessEnds.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Documents\\VSCode\\C#\\Proyek_OOP_Kelas_TukerRepo\\EndlessEnds\\EndlessEnds.csproj",
       "projectName": "EndlessEnds",
-      "projectPath": "C:\\Users\\Raddief Ezra S. A\\EndlessEnds\\EndlessEnds.csproj",
-      "packagesPath": "C:\\Users\\Raddief Ezra S. A\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Raddief Ezra S. A\\EndlessEnds\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Documents\\VSCode\\C#\\Proyek_OOP_Kelas_TukerRepo\\EndlessEnds\\EndlessEnds.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Documents\\VSCode\\C#\\Proyek_OOP_Kelas_TukerRepo\\EndlessEnds\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Raddief Ezra S. A\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
