@@ -93,7 +93,7 @@ namespace EndlessEnds
                 switch (action)
                 {
                     case "1":
-                        Console.Write("Enter direction (north, east, south, west): ");
+                        Console.Write("\nEnter direction (north, east, south, west): ");
                         string direction = Console.ReadLine();
                         Room nextRoom = currentRoom.GetExit(direction);
                         if (nextRoom != null)

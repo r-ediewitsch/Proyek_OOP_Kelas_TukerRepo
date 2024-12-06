@@ -16,7 +16,7 @@ public class RoomManager
     {
         DreamWorld = new Room("Dream World", "World full of clouds, fog as thick as dreams alike.");
         AncientForest = new Room("Ancient Forest", "A vast forest where the ancient monsters dwell.");
-        MainVillage = new Room("Main Village", "Home village where you and your family live.");
+        MainVillage = new Room("Main Village", "Home village where I live.");
         ElderCavern = new Room("Elder Cavern", "Cavern that emanates darkness around it.");
         CrystalLakeEntrance = new Room("Crystal Lake Entrance", "Entrance to Crystal Lake.");
         CrystalLakeNear = new Room("Near Crystal Lake", "Near Crystal Lake, a beautiful and peaceful place.");
