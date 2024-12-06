@@ -6,24 +6,26 @@ namespace EndlessEnds
     public class GameUI
     {
         private Character player;
-        private List<Item> inventory = new List<Item>();
+        public List<Item> inventory = new List<Item>();
         private Battle battle;
 
-        private Room mainVillage;
-        private Room ancientForest;
-        private Room crystalLake;
-        private Room elderCavern;
-        private Room dreamWorld;
+        private RoomManager roomManager;
+        private Room currentRoom;
 
         private CrystalLakeInteraction crystalLakeInteraction;
+        private HealingFountain healingFountain;
+        private bool hasMetCompanion = false;
 
         public GameUI(Character player)
         {
             this.player = player;
             this.battle = new Battle();
-            InitializeRooms();
+            this.roomManager = new RoomManager();
+            roomManager.InitializeRooms();
 
-            crystalLakeInteraction = new CrystalLakeInteraction(player, battle);
+            crystalLakeInteraction = new CrystalLakeInteraction(player, battle, inventory);
+
+            currentRoom = roomManager.MainVillage;
 
             // Adding basic items to inventory
             inventory.Add(new Item("Basic Sword", ItemType.Weapon, 10));
@@ -32,6 +34,7 @@ namespace EndlessEnds
 
         public void Start()
         {
+            Console.Clear();
             Console.WriteLine("Welcome to Endless Ends!");
             DisplayMainMenu();
         }
@@ -73,8 +76,6 @@ namespace EndlessEnds
         {
             Console.WriteLine("\nYou venture into the mysterious lands of Endless Ends...");
 
-            Room currentRoom = mainVillage;
-
             while (true)
             {
                 Console.WriteLine($"\nYou are in {currentRoom.Name}.");
@@ -85,19 +86,49 @@ namespace EndlessEnds
                 Console.WriteLine("1. Move");
                 Console.WriteLine("2. Look around");
                 Console.WriteLine("3. Quit exploring");
+                Console.Write("Choose an option (1-3): ");
 
                 string action = Console.ReadLine();
 
                 switch (action)
                 {
                     case "1":
-                        Console.Write("Enter direction (north, east, south, west): ");
+                        Console.Write("\nEnter direction (north, east, south, west): ");
                         string direction = Console.ReadLine();
                         Room nextRoom = currentRoom.GetExit(direction);
                         if (nextRoom != null)
                         {
+                            if (currentRoom == roomManager.CrystalLakeEntrance && !hasMetCompanion)
+                            {
+                                hasMetCompanion = crystalLakeInteraction.CompanionAppears();
+                            }
+                            else if (currentRoom == roomManager.CrystalLakeNear ||
+                                     currentRoom == roomManager.CrystalLakeRest ||
+                                     currentRoom == roomManager.BanditHideout1 ||
+                                     currentRoom == roomManager.BanditHideout2)
+                            {
+                                crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
+                            }
+                            else if (currentRoom == roomManager.CrystalLakeEnd)
+                            {
+                                if (direction == "west")
+                                {
+                                    if (inventory.Exists(item => item.Name == "White Key"))
+                                    {
+                                        crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("The door is locked. You need a key to open it.");
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    crystalLakeInteraction.Handle(direction, currentRoom.Name, hasMetCompanion);
+                                }
+                            }
                             currentRoom = nextRoom;
-                            crystalLakeInteraction.Handle(direction, currentRoom.Name);
                         }
                         else
                         {
@@ -106,7 +137,12 @@ namespace EndlessEnds
                         break;
                     case "2":
                         Console.WriteLine("You look around the room. It's calm and peaceful.");
-                        // You can add more interactions here
+
+                        if (currentRoom.Name == "Ancient Forest" || currentRoom.Name == "End of Crystal Lake")
+                        {
+                            healingFountain = new HealingFountain(player);
+                            healingFountain.Encounter();
+                        }
                         break;
                     case "3":
                         Console.WriteLine("You stop exploring and return to the main menu.");
@@ -141,23 +177,6 @@ namespace EndlessEnds
                     Console.WriteLine("- " + item);
                 }
             }
-        }
-
-        private void InitializeRooms()
-        {
-            dreamWorld = new Room("Dream World", "world full of clouds, fog as thick as dreams alike.");
-            ancientForest = new Room("Ancient Forest", "A vast forest where the ancient monsters dwell.");
-            mainVillage = new Room("Main Village", "Home village where I live.");
-            elderCavern = new Room("Elder Cavern", "Cavern that eminates darkness around it.");
-            crystalLake = new Room("Crystal Lake", "A lake full of magical crystals.");
-
-            mainVillage.SetExit("north", ancientForest);
-            ancientForest.SetExit("south", mainVillage);
-            ancientForest.SetExit("north", crystalLake);
-            crystalLake.SetExit("south", ancientForest);
-            crystalLake.SetExit("north", elderCavern);
-            elderCavern.SetExit("south", crystalLake);
-            crystalLake.SetExit("east", crystalLake); // To allow resting and dialogue
         }
     }
 }
